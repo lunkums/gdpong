@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=3 uid="uid://brtnc0mj4eyug"]
+
+[ext_resource type="Texture2D" uid="uid://dx4i5s8ijnw36" path="res://world/court/net/sprite.png" id="1_y4ohc"]
+
+[node name="Net" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 6)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 30)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 54)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 78)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 102)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 126)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 150)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 174)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 198)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 222)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 18)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 42)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 66)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 90)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 114)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 138)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D17" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 162)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 186)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 210)
+texture = ExtResource("1_y4ohc")
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+modulate = Color(0.403922, 0.447059, 0.662745, 1)
+position = Vector2(0, 234)
+texture = ExtResource("1_y4ohc")

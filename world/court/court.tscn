@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drxsuvaxuydej"]
+
+[ext_resource type="PackedScene" uid="uid://b4q1mubdb8g3a" path="res://world/court/edge/edge.tscn" id="1_sy3mk"]
+[ext_resource type="PackedScene" uid="uid://brtnc0mj4eyug" path="res://world/court/net/net.tscn" id="2_xgkbj"]
+
+[node name="Court" type="Node2D"]
+
+[node name="TopEdge" parent="." instance=ExtResource("1_sy3mk")]
+position = Vector2(0, -16)
+
+[node name="BottomEdge" parent="." instance=ExtResource("1_sy3mk")]
+position = Vector2(0, 256)
+
+[node name="Net" parent="." instance=ExtResource("2_xgkbj")]
