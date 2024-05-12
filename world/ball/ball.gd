@@ -10,29 +10,31 @@ var _served: bool = false
 var _velocity: Vector2 = Vector2.ZERO
 var _speed: float = 0
 var _starting_position: Vector2
+var _server: Player.Index = Player.Index.NONE
 
-func reset():
+func get_server() -> Player.Index:
+	return _server
+
+func reset(server_index: Player.Index):
 	global_position = _starting_position
 	_velocity = Vector2.ZERO
 	_speed = 0
+	_server = server_index
 	_served = false
 
-func _serve():
+func serve():
 	if _served:
 		return
 
+	var serve_direction = Vector2.LEFT if _server == Player.Index.ONE else Vector2.RIGHT
 	_speed = _starting_speed
-	_velocity.x = _speed
+	_velocity = serve_direction * _speed
 	_served = true
 
 	served.emit()
 
 func _ready():
 	_starting_position = global_position
-
-func _input(event: InputEvent):
-	if event.is_action_pressed("ball_serve"):
-		_serve()
 
 func _physics_process(delta: float):
 	move_local_x(_velocity.x * delta)

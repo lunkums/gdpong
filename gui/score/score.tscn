@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://tyemlpqw8kfe"]
 
-[ext_resource type="Theme" uid="uid://b55p6amyh41ew" path="res://gui/score/theme.tres" id="1_qrn4o"]
+[ext_resource type="Theme" uid="uid://b55p6amyh41ew" path="res://gui/theme.tres" id="1_qrn4o"]
 
 [node name="Score" type="Label"]
 modulate = Color(0.403922, 0.447059, 0.662745, 1)
