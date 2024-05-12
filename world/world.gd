@@ -5,6 +5,7 @@ signal reset(server_index)
 signal round_ended(scorer_index)
 signal game_started()
 signal game_ended(winner_index)
+signal ball_exited_bounds()
 
 @onready var player_1: Player = $Player1
 @onready var player_2: Player = $Player2
@@ -14,6 +15,7 @@ signal game_ended(winner_index)
 @export var _winning_score: int
 
 var _game_over: bool = false
+var _round_ended: bool = false
 var _serving_offset: int
 
 func _get_server() -> Player.Index:
@@ -26,6 +28,10 @@ func _ready():
 	for goal in get_tree().get_nodes_in_group("goal"):
 		if goal is Goal:
 			goal.goal_scored.connect(_on_goal_scored)
+
+	var bounds = get_tree().get_first_node_in_group("bounds")
+	if bounds is Bounds:
+		bounds.ball_exited.connect(_on_bounds_ball_exited)
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("game_exit"):
@@ -41,6 +47,11 @@ func _input(event: InputEvent):
 	if _game_over and event.is_action_pressed("game_reset"):
 		get_tree().reload_current_scene()
 
+func _on_bounds_ball_exited():
+	if not _round_ended and not _game_over:
+		reset_timer.start()
+		ball_exited_bounds.emit()
+
 func _on_goal_scored(player_index: Player.Index):
 	if player_1.get_score() >= _winning_score:
 		_end_game(player_index)
@@ -48,6 +59,7 @@ func _on_goal_scored(player_index: Player.Index):
 		_end_game(player_index)
 	else:
 		reset_timer.start()
+		_round_ended = true
 		round_ended.emit(player_index)
 
 func _end_game(player_index: Player.Index):
@@ -61,4 +73,5 @@ func _reset():
 	var server = _get_server()
 	ball.reset(server)
 
+	_round_ended = false
 	reset.emit(server)

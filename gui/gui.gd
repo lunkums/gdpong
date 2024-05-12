@@ -16,6 +16,7 @@ func _ready():
 		world.round_ended.connect(_on_round_ended)
 		world.game_started.connect(_on_game_started)
 		world.game_ended.connect(_on_game_ended)
+		world.ball_exited_bounds.connect(_on_ball_exited_bounds)
 
 	var ball = get_tree().get_first_node_in_group("ball")
 	if ball is Ball:
@@ -58,3 +59,6 @@ func _on_world_reset(server_index: Player.Index):
 
 func _on_ball_served():
 	_set_log("")
+
+func _on_ball_exited_bounds():
+	_set_log("Ball out of bounds! Resetting...")

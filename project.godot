@@ -31,6 +31,7 @@ goal=""
 player=""
 world=""
 ball=""
+bounds=""
 
 [input]
 

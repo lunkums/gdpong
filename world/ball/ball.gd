@@ -4,6 +4,7 @@ extends Area2D
 signal served()
 
 @export var _starting_speed: float
+@export var _max_speed: float
 @export_range(1.01, 1.1) var _accel_rate: float
 
 var _served: bool = false
@@ -14,6 +15,9 @@ var _server: Player.Index = Player.Index.NONE
 
 func get_server() -> Player.Index:
 	return _server
+
+func stop():
+	_velocity = Vector2.ZERO
 
 func reset(server_index: Player.Index):
 	global_position = _starting_position
@@ -52,6 +56,6 @@ func _on_body_entered(body: Node2D):
 			deflect.y = signf(deflect.y) * diag_vec.y
 
 		_velocity = deflect * _speed
-		_speed *= _accel_rate
+		_speed = minf(_speed * _accel_rate, _max_speed)
 	elif body.is_in_group("edge"):
 		_velocity.y *= -1
