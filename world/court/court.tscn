@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drxsuvaxuydej"]
+[gd_scene load_steps=4 format=3 uid="uid://drxsuvaxuydej"]
 
 [ext_resource type="PackedScene" uid="uid://b4q1mubdb8g3a" path="res://world/court/edge/edge.tscn" id="1_sy3mk"]
 [ext_resource type="PackedScene" uid="uid://brtnc0mj4eyug" path="res://world/court/net/net.tscn" id="2_xgkbj"]
+[ext_resource type="PackedScene" uid="uid://dbqntpn8o7f7x" path="res://world/court/goal/goal.tscn" id="3_ukw05"]
 
 [node name="Court" type="Node2D"]
 
@@ -12,3 +13,11 @@ position = Vector2(0, -16)
 position = Vector2(0, 256)
 
 [node name="Net" parent="." instance=ExtResource("2_xgkbj")]
+
+[node name="Goal" parent="." instance=ExtResource("3_ukw05")]
+position = Vector2(-184, 120)
+_owner_index = 1
+
+[node name="Goal2" parent="." instance=ExtResource("3_ukw05")]
+position = Vector2(184, 120)
+_owner_index = 2

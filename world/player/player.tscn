@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3v1i"]
 size = Vector2(8, 32)
 
-[node name="Player" type="AnimatableBody2D"]
+[node name="Player" type="AnimatableBody2D" groups=["player"]]
+process_physics_priority = 10
 sync_to_physics = false
 script = ExtResource("1_rxxpw")
-_speed = 240.0
+_speed = 320.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1rd7l")

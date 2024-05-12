@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drxsuvaxuydej" path="res://world/court/court.tscn" id="3_ptkha"]
 [ext_resource type="PackedScene" uid="uid://n51skowxk63v" path="res://world/ball/ball.tscn" id="4_nihge"]
 
-[node name="World" type="Node2D" groups=["world"]]
+[node name="World" type="Node2D" groups=["edge"]]
 script = ExtResource("1_yogk4")
 
 [node name="Player1" parent="." instance=ExtResource("2_35ll4")]
@@ -21,11 +21,5 @@ _index = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 120)
 
-[node name="Ball" parent="." groups=["ball"] instance=ExtResource("4_nihge")]
+[node name="Ball" parent="." instance=ExtResource("4_nihge")]
 position = Vector2(0, 120)
-
-[node name="ResetTimer" type="Timer" parent="."]
-wait_time = 2.333
-one_shot = true
-
-[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
