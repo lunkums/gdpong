@@ -15,6 +15,9 @@ signal score_changed(index, new_score)
 var _score: int = 0
 var _starting_position: Vector2
 
+func get_score() -> int:
+	return _score
+
 func reset():
 	global_position = _starting_position
 	set_physics_process(false)

@@ -12,6 +12,8 @@ func _ready():
 	var world = get_tree().get_first_node_in_group("world")
 	if world is World:
 		world.reset.connect(_on_world_reset)
+		world.round_ended.connect(_on_round_ended)
+		world.game_ended.connect(_on_game_ended)
 
 func _set_log(message: String):
 	_log.text = message
@@ -20,13 +22,17 @@ func _on_player_score_changed(index: Player.Index, new_score: int):
 	match index:
 		Player.Index.ONE:
 			_p1_score.text = str(new_score)
-			_set_log("Player 1 scored! Resetting...")
 		Player.Index.TWO:
 			_p2_score.text = str(new_score)
-			_set_log("Player 2 scored! Resetting...")
 		_:
 			# Shouldn't happen
 			pass
+
+func _on_round_ended(scorer_index: Player.Index):
+	_set_log("Player %d scored! Resetting..." % scorer_index)
+
+func _on_game_ended(winner_index: Player.Index):
+	_set_log("Player %d has won! Press R to restart." % winner_index)
 
 func _on_world_reset():
 	_set_log("")

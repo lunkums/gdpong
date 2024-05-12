@@ -7,6 +7,7 @@
 
 [node name="World" type="Node2D" groups=["world"]]
 script = ExtResource("1_yogk4")
+_winning_score = 11
 
 [node name="Player1" parent="." instance=ExtResource("2_35ll4")]
 position = Vector2(-136, 120)
